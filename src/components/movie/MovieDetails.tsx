@@ -65,7 +65,7 @@ export default function MovieDetails({
       setSelectedPlace((prev) => [...prev, movie]);
     }
   };
-
+  //asdasdasdasdasd
   return (
     movieInfoData && (
       <>
