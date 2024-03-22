@@ -17,17 +17,11 @@ export default function PlaceBox({
   handleClick = () => {},
 }: PlaceBoxType) {
   const selectedPlace = useRecoilValue(selectPlaceState);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    setCursorPosition({ x: e.clientX, y: e.clientY });
-  };
 
   return (
     <div
       key={movie.moviePlaceId}
       className="w-[340px] h-[220px] flex flex-col items-center relative"
-      onMouseMove={handleMouseMove}
     >
       <div
         className="w-full h-[85%] rounded-lg cursor-pointer relative flex justify-center items-center"

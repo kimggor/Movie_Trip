@@ -7,6 +7,8 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import PlaceBox from "./PlaceBox";
 import Divider from "../common/Divider";
 import { MoviePlaceDataType } from "@/type/movieType";
+import MapComponent from "./KakaoMapStore";
+import Category from "../common/Category";
 
 declare global {
   interface Window {
@@ -214,7 +216,17 @@ export default function KakaoMap() {
           onReady={loadKakaoMap}
           onError={console.error}
         />
-        <div id={"map"} className="w-4/5 h-[800px]" />
+
+        {/* <div id={"map"} className="w-4/5 h-[800px]" /> */}
+        <div
+          id={"map"}
+          className="w-4/5 h-[800px]"
+          style={{ position: "relative" }}
+        >
+          <div style={{ position: "absolute", top: 10, left: 10 }}>
+            <Category />
+          </div>
+        </div>
         <div className="flex flex-col items-start mt-5">
           <h2 className="text-[32px] text-[#333333] font-[700] mb-2">
             선택한 촬영지
